@@ -199,9 +199,11 @@ function addTransaction(finisher,transactionId,username,apikey)
 function signupUtil(finisher,username,password)
 {
 	var sqlSelect = `SELECT id FROM clients WHERE username = "${username}"`;
+	console.log(sqlSelect);
 	con.query(sqlSelect,function(err,res,fields){
 		if(err)
 		{
+			console.log(err);
 			let signupResponse = {'isSuccessfull' : false , reason : 'Server Error'};
 			finisher(signupResponse);
 		}
@@ -218,9 +220,11 @@ function signupUtil(finisher,username,password)
 				console.log(apikey);
 				
 				var sqlInsert = `INSERT INTO clients (username,password,apikey) VALUES ("${username}","${md5(password)}","${apikey}")`;
+				console.log(sqlInsert);
 				con.query(sqlInsert,function(err,res,fields){
 					if(err)
 					{
+						console.log(err);
 						let signupResponse = {'isSuccessfull' : false , reason : 'Server error'};
 						finisher(signupResponse); 
 					}

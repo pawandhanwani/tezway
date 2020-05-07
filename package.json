@@ -1,7 +1,7 @@
 {
-  "name": "tez-gateway",
+  "name": "tezway",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "conseiljs": "^0.4.1",
@@ -18,9 +18,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "killport": "kill-port --port 5003"
   },
-  "author": "",
+  "author": "Pawan Dhanwani",
   "license": "ISC",
-  "description": ""
+  "description": "Official TezIndia v Harappa Hackathon Submission"
 }

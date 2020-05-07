@@ -66,7 +66,7 @@
             <ol>
               <li>Once you have logged in provide us the lander url where you want payer to get redirected once transaction is complete.</li>
               <li>Now for making any transaction you need to generate a transaction Id first. Send username(email) and apikey as payloads to following API.
-                <strong>http://tezway.com/requestTransactionId [POST] (username,apikey)</strong></br>
+                <strong>http://ec2-13-126-85-200.ap-south-1.compute.amazonaws.com:5003/requestTransactionId [POST] (username,apikey)</strong></br>
                 On a valid request this will return -
                 <pre><code>
 {
@@ -86,7 +86,7 @@
               <li>
                 Once you get transactionId you need to let us know how much amount you need to collect in INR and payer's email address. 
                 </br> 
-                <strong>http://tezway.com/initiateTransaction [POST] (transactionId,apikey,amount,payeremail)</strong></br>
+                <strong>http://ec2-13-126-85-200.ap-south-1.compute.amazonaws.com:5003/initiateTransaction [POST] (transactionId,apikey,amount,payeremail)</strong></br>
                 On a successfull request this would return.
                 <pre><code>
 {
@@ -102,7 +102,7 @@
               </li>
               <li>
                 Once above API returns 'success' status redirect the payer to -<br>
-                <strong>http://tezway.com/pay?transactionId={TRANSACTION_ID_GENERATED_AT_STEP_2}></strong>
+                <strong>http://ec2-13-126-85-200.ap-south-1.compute.amazonaws.com:5003/pay?transactionId={TRANSACTION_ID_GENERATED_AT_STEP_2}></strong>
               </li>
               <li>
                 After the transaction is complete we redirect the user to your page with transaction Id as url paramter.<br>
@@ -110,7 +110,7 @@
                 <br>
                 We recommend you to request details of a particular transactionId so that you can confirm transaction was actually completed.
                 <br>
-                <strong>http://tezway.com/checkTransactionStatus [POST] (apikey,transactionId)</strong><br>
+                <strong>http://ec2-13-126-85-200.ap-south-1.compute.amazonaws.com:5003/checkTransactionStatus [POST] (apikey,transactionId)</strong><br>
                 status - pending / initiated / Complete <br>
                 paymentStatus - Success / Failure / Pending <br>
                 On a successfull request - <br>
