@@ -46,7 +46,7 @@ secure: false,
 requireTLS: true,
 auth: {
     user: 'pawan.itlion@gmail.com', // like : abc@gmail.com
-    pass: 'pawan.itlion.june'           // like : pass@123
+    pass: 'pawan.itlion'           // like : pass@123
 }
 });
 
